@@ -619,10 +619,10 @@ class redis (
   anchor { 'redis::begin': }
   anchor { 'redis::end': }
 
-  include ::redis::preinstall
-  include ::redis::install
-  include ::redis::config
-  include ::redis::service
+  contain ::redis::preinstall
+  cantain ::redis::install
+  contain ::redis::config
+  contain ::redis::service
 
   if $::redis::notify_service {
     Anchor['redis::begin'] ->
